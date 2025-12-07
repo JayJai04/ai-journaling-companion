@@ -30,11 +30,13 @@ I won’t be including multimedia support for v0 because I want the user to desc
 
 | :--- | :--- |
 
-| FR-UM-101 | The system should allow the user to create an account. The password should be hashed using SHA-256 and salts. |
+| FR-UM-101 | The system should allow the user to create and delete an account. The password should be hashed using bcrypt. |
 
-| FR-UM-102 | The system should allow users to delete their accounts. |
+| FR-UM-102 | The system should allow users to login/logout. Also, there should be a way to reset password. |
 
-| FR-UM-103 | The system should allow users to configure their name and bio. |
+| FR-UM-103 | The system should allow users to configure their name and bio (textbox). |
+
+| FR-UM-104 | The system should assign users JWTs for session authentication. |
 
 ### "Getting Started" Program
 
@@ -42,7 +44,7 @@ I won’t be including multimedia support for v0 because I want the user to desc
 
 | :--- | :--- |
 
-| FR-GSP-101 | The system shall onboard the user to the app by providing instructions on how to use the app. |
+| FR-GSP-101 | The system shall onboard the user to the app by requiring users to read a document of instructions on how to use the app (by me). |
 
 ### Journal Entry History
 
@@ -60,17 +62,17 @@ I won’t be including multimedia support for v0 because I want the user to desc
 
 | :--- | :--- |
 
-| FR-AI-101 | The system should generate an AI insight weekly based on mood, content, and time of journal entries. |
+| FR-AI-101 | Thinker should generate an insight weekly based on mood, content, and time of journal entries via in-app notification service. |
 
-| FR-AI-102 | The system should generate AI insights when prompted by the user, with the capability to engage in a conversation, like a chatbot. |
 
+| FR-AI-102 | Thinker should generate insights when prompted by the user, with the capability to engage in a conversation, like a chatbot. |
 ### Reminder Tool
 
 | ID | Requirement |
 
 | :--- | :--- |
 
-| FR-RT-101 | The user should get daily notifications at a certain time of day to journal with a fun message. |
+| FR-RT-101 | The user should get (optional) daily notifications at a user-specified time of day to journal with a fun message via in-app notification service|
 
 ## Non-Functional Requirements
 
@@ -96,9 +98,15 @@ The system should be deployed on Vercel to allow users to access the app.
 
 | Hosting | Vercel | |
 
-| Relational Database | Postgres | |
+| LLM Provider | Gemini | |
 
-| NoSQL Database | MongoDB | |
+| Authentication | JWT | |
+
+| Object Relational Mapping Software | PrismaORM | |
+
+| Relational Database | Postgres | Users | |
+
+| NoSQL Database | MongoDB | Journal Entires| |
 
 ### Operating Environment
 
